@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Bio Informatics Lab.",
+    "nameKo": "",
+    "image": "/uploads/images/labs/생체-바이오-사진_R.jpg",
+    "website": "https://itbse.hanyang.ac.kr",
+    "descriptionEn": "The Bio Informatics Lab works on topics related to algorithmic aspects of biocomputational problems. We look into fields like gene prediction, alignments, phylogenetic analyses, gene clustering etc. Our interests are toward the computational-algorithmic side as well as the applied side, where we inspect specific genes or non-coding genomic components by applying our algorithmic approaches and techniques. The LAB is part of the ITBSE research group at Hanyang University that has been working in the joined areas of bioengineering and information technology.",
+    "descriptionKo": "The Bio Informatics Lab은 생명정보학적 문제의 알고리즘 측면과 관련된 주제를 연구합니다. 유전자 예측, 정렬, 계통 발생 분석, 유전자 클러스터링 등의 분야를 탐구합니다. 저희 연구실은 계산-알고리즘적 측면뿐만 아니라 응용 측면에도 관심을 가지고 있으며, 알고리즘적 접근 방식과 기술을 적용하여 특정 유전자 또는 비코딩 유전체 구성 요소를 검사합니다. 이 연구실은 생명공학과 정보기술의 접목 분야에서 연구해 온 한양대학교 ITBSE 연구 그룹의 일부입니다."
+  },
+  {
+    "name": "Data and Business Intelligence Lab.",
+    "nameKo": "데이터 및 비즈니스 인텔리전스 연구실",
+    "image": "/uploads/images/labs/technology-5917370_640.png",
+    "website": "http://eunchan.hanyang.ac.kr",
+    "descriptionEn": "Data and Business Intelligence Lab. conducts research to find solution to various business problems through systematic research and analysis, deriving actionable strategies and implications.",
+    "descriptionKo": "데이터 및 비즈니스 인텔리전스 연구실은 체계적인 연구와 분석을 통해 다양한 비즈니스 문제에 대한 해결책을 찾고 실행 가능한 전략과 시사점을 도출하는 연구를 수행합니다."
+  },
+  {
+    "name": "Future Intelligence Lab.",
+    "nameKo": "미래 인텔리전스 연구실",
+    "image": "/uploads/images/labs/미래-시각화-사진.jpg",
+    "website": "https://filab.hanyang.ac.kr",
+    "descriptionEn": "The goal of Future Intelligence Lab. is development of a systematic intelligence system to discover the future-oriented technology and business opportunities.",
+    "descriptionKo": "미래 인텔리전스 연구실에서는 미래 기술 및 비즈니스 기회 발굴을 위한 인텔리전스 방법론 및 시스템 개발에 관한 연구를 수행합니다."
+  },
+  {
+    "name": "Information System Lab.",
+    "nameKo": "정보시스템 연구실",
+    "image": "/uploads/images/labs/정보시스템-사진_R.jpg",
+    "website": "https://www.infosyslab.org",
+    "descriptionEn": "The goal of Information System Lab. conducts research of any topic related with the utilization of information system in organizations for future business opportunities.",
+    "descriptionKo": "정보시스템 연구실에서는 조직에서 미래 비즈니스 기회 활용을 위한 정보시스템의 활용과 관련된 연구를 수행합니다."
+  },
+  {
+    "name": "Security and Privacy Lab.",
+    "nameKo": "보안 및 프라이버시 연구실",
+    "image": "/uploads/images/labs/보안-자물쇠-사진.jpg",
+    "website": "https://sites.google.com/site/hyusnp",
+    "descriptionEn": "Security and Privacy Lab. researches the modern cryptography such as forward secure signature, broadcast encryption, attribute based encryption, hidden vector encryption, and fully homomorphic encryption. In addition, it develops through automation tools the embedded systems, compilers for non-volatile memory, and worst-case response time analysis tools for real-time systems.",
+    "descriptionKo": "최신 암호 프로토콜을 개발합니다. 전방향 보안 서명, 브로드캐스트 암호화, 속성 기반 암호화, 은닉 벡터 암호화, 완전 동형 암호화에 대해 연구합니다. 내장형 시스템 개발 자동화 도구, 비휘발성 메모리용 컴파일러, 실시간 시스템 최악의 경우 응답 시간 분석 도구를 개발합니다."
+  }
+]

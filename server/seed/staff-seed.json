@@ -1,0 +1,56 @@
+[{
+    "name": "권혁준",
+    "position": "부장",
+    "email": "romas@hanyang.ac.kr",
+    "phone": "02-2220-3103",
+    "office": "",
+    "duties": ["소프트웨어 행정팀 총괄 (소프트웨어 행정팀장)"],
+    "image": "",
+    "isActive": true,
+    "order": 1
+  },
+  {
+    "name": "주민수",
+    "position": "행정직원",
+    "email": "jms422@hanyang.ac.kr",
+    "phone": "02-2220-3132",
+    "office": "",
+    "duties": ["교무, 기획, 총무"],
+    "image": "",
+    "isActive": true,
+    "order": 2
+  },
+  {
+    "name": "박혜인",
+    "position": "행정직원",
+    "email": "phiphi@hanyang.ac.kr",
+    "phone": "02-2220-3133",
+    "office": "",
+    "duties": ["학부 학사"],
+    "image": "",
+    "isActive": true,
+    "order": 3
+  },
+  {
+    "name": "손현아",
+    "position": "행정직원",
+    "email": "ahxxci@hanyang.ac.kr",
+    "phone": "02-2220-2341",
+    "office": "",
+    "duties": ["대학원 학사"],
+    "image": "",
+    "isActive": true,
+    "order": 4
+  },
+  {
+    "name": "이화은",
+    "position": "행정직원",
+    "email": "phoo11118@hanyang.ac.kr",
+    "phone": "02-2220-3136",
+    "office": "",
+    "duties": ["학부 장학, 학생생활관, 예산"],
+    "image": "",
+    "isActive": true,
+    "order": 5
+  }
+]

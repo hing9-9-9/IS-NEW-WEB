@@ -1,0 +1,16 @@
+import type { NextConfig } from "next";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8070";
+
+const nextConfig: NextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: "/uploads/:path*",
+        destination: `${API_URL}/uploads/:path*`,
+      },
+    ];
+  },
+};
+
+export default nextConfig;

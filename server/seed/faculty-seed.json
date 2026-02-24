@@ -1,0 +1,181 @@
+[{
+    "name": "이욱",
+    "position": "교수",
+    "title" : "학과장",
+    "email": "ooklee@hanyang.ac.kr",
+    "image": "/uploads/images/faculty/이욱_교수-사진.jpg",
+    "researchAreas": [
+      "정보시스템관리 Information System Management",
+      "정보시스템과 정보기술분석 Information System and Technological analysis",
+      "정치정보시스템 Political information system",
+      "전자민주주의 e-democracy",
+      "해방이론과 정보기술 Liberation theory and IT"
+    ],
+    "location": "산학기술관 501호",
+    "phone": "02-2220-1087",
+    "homepage": "",
+    "category": "교수진"
+  },
+  {
+    "name": "오현옥",
+    "position": "교수",
+    "title" : "정교수",
+    "email": "hoh@hanyang.ac.kr",
+    "image": "/uploads/images/faculty/오현옥_교수-사진.jpg",
+    "researchAreas": [
+      "암호학 Cryptography",
+      "영지식 증명 Zero-knowledge proof",
+      "블록체인 Blockchain"
+    ],
+    "location": "HIT관 321호",
+    "phone": "02-2294-5423",
+    "homepage": "https://sites.google.com/site/hyusnp",
+    "category": "교수진"
+  },
+  {
+    "name": "Arne Holger Kutzner",
+    "position": "교수",
+    "title" : "정교수",
+    "email": "kutzner@hanyang.ac.kr",
+    "image": "/uploads/images/faculty/Kutzner.jpg",
+    "researchAreas": [
+      "Algorithmic solutions of biocomputational problems",
+      "Gene prediction and gene analysis",
+      "Phylogenetic analyses",
+      "Alignment algorithms",
+      "Clustering algorithms for genomic data",
+      "Merging algorithms"
+    ],
+    "location": "ITBT관 714호",
+    "phone": "02-2220-2397",
+    "homepage": "http://itbe.hanyang.ac.kr/",
+    "category": "교수진"
+  },
+  {
+    "name": "안종창",
+    "position": "교수",
+    "title" : "정교수",
+    "email": "ajchang@hanyang.ac.kr",
+    "image": "/uploads/images/faculty/안종창_부교수-사진.jpg",
+    "researchAreas": [
+      "정보시스템사용자 행태 분석 User behavior analysis of information systems",
+      "지식경영 Knowledge management,",
+      "전자상거래 E-commerce",
+      "정보시스템 감사 System auditing",
+      "중소기업 분석(사업성/기술성) SMB analysis"
+    ],
+    "location": "산학기술관 208호",
+    "phone": "02-2220-2387",
+    "homepage": "",
+    "category": "교수진"
+  },
+  {
+    "name": "원영준",
+    "position": "교수",
+    "title" : "정교수",
+    "email": "youngjoon@hanyang.ac.kr",
+    "image": "/uploads/images/faculty/원영준_부교수-사진.jpg",
+    "researchAreas": [
+      "Network management",
+      "traffic monitoring and analyst softwares"
+    ],
+    "location": "산학기술관 214호",
+    "phone": "02-2220-2388",
+    "homepage": "http://young.hanyang.ac.kr/",
+    "category": "교수진"
+  },
+  {
+    "name": "박현석",
+    "position": "교수",
+    "title" : "정교수",
+    "email": "hp@hanyang.ac.kr",
+    "image": "/uploads/images/faculty/박현석-교수.jpg",
+    "researchAreas": [
+      "기술경영 Technology management",
+      "기술혁신 Technological change and innovation",
+      "제품-서비스 시스템 Product-service system",
+      "엔지니어링 디자인 Engineering design",
+      "특허분석 방법론 Patent analytics"
+    ],
+    "location": "산학기술관 517호",
+    "phone": "02-2220-2396",
+    "homepage": "http://filab.hanyang.ac.kr/",
+    "category": "교수진"
+  },
+  {
+    "name": "김은찬",
+    "position": "교수",
+    "title" : "조교수",
+    "email": "eckim@hanyang.ac.kr",
+    "image": "/uploads/images/faculty/김은찬-교수.jpg",
+    "researchAreas": [
+      "비즈니스 인텔리전스 Business Intelligence",
+      "인공지능 응용 AI Applications",
+      "디지털 정책 Digital Policy",
+      "기술 수용 및 혁신 Technology Adoption and Innovation",
+      "녹색 금융 Green Finance",
+      "다학제적 융합 연구 Multidisciplinary Research"
+    ],
+    "location": "산학기술관 708호",
+    "phone": "02-2220-0369",
+    "homepage": "http://eunchan.hanyang.ac.kr/",
+    "category": "교수진"
+  },
+  {
+    "name": "이훈희",
+    "email": "hlee5698@naver.com",
+    "position": "겸임교수",
+    "category": "교수진",
+    "subcategory": "겸임교수진"
+  },
+  {
+    "name": "김봉규",
+    "email": "alexbongkyu@naver.com",
+    "position": "겸임교수",
+    "category": "교수진",
+    "subcategory": "겸임교수진"
+  },
+  {
+    "name": "김낙일",
+    "email": "master@nisoft.kr",
+    "position": "겸임교수",
+    "category": "교수진",
+    "subcategory": "겸임교수진"
+  },
+  {
+    "name": "백인섭",
+    "email": "uxdesigner@daum.net",
+    "position": "자문교수",
+    "category": "자문교수"
+  },
+  {
+    "name": "이규한",
+    "email": "kyuhanlee@korea.ac.kr",
+    "position": "자문교수",
+    "category": "자문교수"
+  },
+  {
+    "name": "김규태",
+    "email": "kimx1591@gmail.com",
+    "position": "자문교수",
+    "category": "자문교수"
+  },
+  {
+    "name": "박준하",
+    "email": "junha@tossbank.com",
+    "position": "자문교수",
+    "category": "자문교수"
+  },
+  {
+    "name": "장윤상",
+    "email": "ysjang@koreacb.com",
+    "position": "자문교수",
+    "category": "자문교수"
+  },
+  {
+    "name": "신현진",
+    "email": "hyunjin.shin@hudson-ai.com",
+    "position": "자문교수",
+    "category": "자문교수"
+  }
+]
