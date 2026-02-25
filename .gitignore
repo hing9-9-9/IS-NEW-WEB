@@ -42,13 +42,7 @@ next-env.d.ts
 
 */node_modules/
 
-# seed attachments (large binary files)
-server/seed/attachments/
-server/seed/attachments-jobs/
 
-# uploaded files (keep directory structure via .gitkeep)
-server/uploads/**/*
-!server/uploads/**/.gitkeep
 
 # logs
 logs/
