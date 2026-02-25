@@ -99,6 +99,11 @@ export default function SettingsPage() {
     try {
       setSaving(true);
       await siteSettingsApi.update('footer_managers', managers);
+      await fetch('/api/revalidate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tag: 'footer_managers' }),
+      });
       showSaveMessage('담당자 정보가 저장되었습니다.');
     } catch (err) {
       alert(err instanceof Error ? err.message : '저장 실패');

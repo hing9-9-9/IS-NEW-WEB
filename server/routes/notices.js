@@ -140,7 +140,7 @@ router.post('/:id/attachments', requireAdmin, upload.array('files', 10), async (
 
     const newAttachments = (req.files || []).map(file => ({
       filename: file.filename,
-      originalName: file.originalname,
+      originalName: Buffer.from(file.originalname, 'latin1').toString('utf8'),
       path: `/uploads/notices/${file.filename}`,
       size: file.size
     }));

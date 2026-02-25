@@ -12,7 +12,7 @@ async function getFooterManagers(): Promise<FooterManager[]> {
   try {
     const apiUrl = process.env.INTERNAL_API_URL || 'http://localhost:8070';
     const res = await fetch(`${apiUrl}/api/settings/footer_managers`, {
-      next: { revalidate: 300 },
+      next: { revalidate: 300, tags: ['footer_managers'] },
     });
     if (!res.ok) return [];
     const data = await res.json();
