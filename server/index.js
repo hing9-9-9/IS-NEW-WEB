@@ -54,6 +54,7 @@ const graduationRequirementsRoutes = require('./routes/graduationRequirements');
 const siteSettingsRoutes = require('./routes/siteSettings');
 const studentCouncilRoutes = require('./routes/studentCouncil');
 const uploadRoutes = require('./routes/upload');
+const curriculumRoutes = require('./routes/curriculum');
 
 app.use('/api/admin', adminAuthRoutes);
 app.use('/api/admin/settings', adminSettingsRoutes);
@@ -69,6 +70,7 @@ app.use('/api/graduation-requirements', graduationRequirementsRoutes);
 app.use('/api/settings', siteSettingsRoutes);
 app.use('/api/student-council', studentCouncilRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/curriculum', curriculumRoutes);
 
 // Health check
 app.get('/api/health', async (req, res) => {

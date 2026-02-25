@@ -119,7 +119,7 @@ export default function NoticeDetailPage() {
                   {notice.attachments.map((att) => (
                     <li key={att._id}>
                       <a
-                        href={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8070'}${att.path}`}
+                        href={att.path}
                         download={att.originalName}
                         className="inline-flex items-center gap-2 text-sm text-[#0066B3] hover:underline"
                       >

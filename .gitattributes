@@ -1,2 +1,24 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Binary files - never apply line ending conversion
+*.pdf binary
+*.hwp binary
+*.hwpx binary
+*.ppt binary
+*.pptx binary
+*.xls binary
+*.xlsx binary
+*.doc binary
+*.docx binary
+*.zip binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.bmp binary
+*.webp binary
+*.svg binary
+*.ico binary
+*.mp4 binary
+*.mp3 binary

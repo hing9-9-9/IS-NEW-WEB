@@ -2,7 +2,29 @@ import Link from "next/link";
 import Image from "next/image";
 import { navigation, contactInfo } from "@/data/navigation";
 
-export default function Footer() {
+interface FooterManager {
+  role: string;
+  name: string;
+  email: string;
+}
+
+async function getFooterManagers(): Promise<FooterManager[]> {
+  try {
+    const apiUrl = process.env.INTERNAL_API_URL || 'http://localhost:8070';
+    const res = await fetch(`${apiUrl}/api/settings/footer_managers`, {
+      next: { revalidate: 300 },
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    if (Array.isArray(data.value)) return data.value;
+  } catch {
+    // ignore
+  }
+  return [];
+}
+
+export default async function Footer() {
+  const managers = await getFooterManagers();
   return (
     <footer className="bg-[#0a2d5e] text-gray-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -49,7 +71,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white text-sm font-semibold mb-3 tracking-wide">담당자</h3>
             <ul className="space-y-2.5 text-sm">
-              {contactInfo.managers.map((manager) => (
+              {managers.map((manager) => (
                 <li key={manager.email} className="text-gray-400">
                   <span className="text-gray-500 text-xs">{manager.role}</span>
                   <br />

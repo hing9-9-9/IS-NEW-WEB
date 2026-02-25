@@ -18,6 +18,7 @@ import {
   GraduationCap,
   LogOut,
   Heart,
+  ExternalLink,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { authApi } from '@/lib/api';
@@ -125,7 +126,7 @@ export default function AdminLayout({
           </button>
         </div>
 
-        <nav className="p-4 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 140px)' }}>
+        <nav className="p-4 overflow-y-auto h-[calc(100vh-72px)]">
           <ul className="space-y-2">
             {menuItems.map((item) => {
               const isActive = pathname === item.href ||
@@ -151,24 +152,27 @@ export default function AdminLayout({
                 </li>
               );
             })}
+
+            <li className="pt-2 border-t border-white/10">
+              <Link
+                href="/"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-white/70 hover:bg-white/10 hover:text-white"
+              >
+                <ExternalLink size={20} />
+                <span>사이트로 돌아가기</span>
+              </Link>
+            </li>
+            <li>
+              <button
+                onClick={handleLogout}
+                className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors w-full text-left text-red-300 hover:bg-red-500/20 hover:text-red-100"
+              >
+                <LogOut size={20} />
+                <span>로그아웃</span>
+              </button>
+            </li>
           </ul>
         </nav>
-
-        <div className="absolute bottom-4 left-4 right-4 space-y-2">
-          <button
-            onClick={handleLogout}
-            className="flex items-center justify-center gap-2 w-full py-2 px-4 bg-red-500/20 rounded-lg text-red-200 hover:bg-red-500/30 hover:text-white transition-colors"
-          >
-            <LogOut size={18} />
-            <span>로그아웃</span>
-          </button>
-          <Link
-            href="/"
-            className="block w-full text-center py-2 px-4 bg-white/10 rounded-lg text-white/70 hover:bg-white/20 hover:text-white transition-colors"
-          >
-            사이트로 돌아가기
-          </Link>
-        </div>
       </aside>
 
       {/* Main content */}

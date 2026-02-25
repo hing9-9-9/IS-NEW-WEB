@@ -1,10 +1,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Save, RefreshCw, Database, Server, Shield, FileText, MapPin, Info } from 'lucide-react';
+import { Save, RefreshCw, Database, Server, Shield, FileText, MapPin, Info, UserCircle, Plus, Trash2 } from 'lucide-react';
 import { siteSettingsApi } from '@/lib/api';
 
-type Tab = 'system' | 'about' | 'location';
+type Tab = 'system' | 'about' | 'location' | 'footer';
+
+interface FooterManager {
+  role: string;
+  name: string;
+  email: string;
+}
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState<Tab>('system');
@@ -16,6 +22,13 @@ export default function SettingsPage() {
   const [aboutGoals, setAboutGoals] = useState('');
   const [aboutFeatures, setAboutFeatures] = useState('');
 
+  // Footer managers
+  const [managers, setManagers] = useState<FooterManager[]>([
+    { role: '홈페이지 책임자', name: '김은찬', email: 'eckim@hanyang.ac.kr' },
+    { role: '홈페이지 관리자', name: '권혁준', email: 'romas@hanyang.ac.kr' },
+    { role: '홈페이지 담당자', name: '박혜인', email: 'phiphi@hanyang.ac.kr' },
+  ]);
+
   // Location
   const [locationAddress, setLocationAddress] = useState('');
   const [locationPhone, setLocationPhone] = useState('');
@@ -26,6 +39,11 @@ export default function SettingsPage() {
   useEffect(() => {
     const loadSettings = async () => {
       try {
+        const footerData = await siteSettingsApi.get('footer_managers');
+        if (footerData.value && Array.isArray(footerData.value)) {
+          setManagers(footerData.value as FooterManager[]);
+        }
+
         const aboutData = await siteSettingsApi.get('about_content');
         if (aboutData.value) {
           const val = aboutData.value as { overview?: string; goals?: string[]; features?: { title: string; desc: string }[] };
@@ -77,6 +95,30 @@ export default function SettingsPage() {
     }
   };
 
+  const saveFooter = async () => {
+    try {
+      setSaving(true);
+      await siteSettingsApi.update('footer_managers', managers);
+      showSaveMessage('담당자 정보가 저장되었습니다.');
+    } catch (err) {
+      alert(err instanceof Error ? err.message : '저장 실패');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const updateManager = (index: number, field: keyof FooterManager, value: string) => {
+    setManagers(prev => prev.map((m, i) => i === index ? { ...m, [field]: value } : m));
+  };
+
+  const addManager = () => {
+    setManagers(prev => [...prev, { role: '', name: '', email: '' }]);
+  };
+
+  const removeManager = (index: number) => {
+    setManagers(prev => prev.filter((_, i) => i !== index));
+  };
+
   const saveLocation = async () => {
     try {
       setSaving(true);
@@ -103,6 +145,7 @@ export default function SettingsPage() {
     { id: 'system' as Tab, label: '시스템', icon: Server },
     { id: 'about' as Tab, label: '학과소개', icon: FileText },
     { id: 'location' as Tab, label: '위치 정보', icon: MapPin },
+    { id: 'footer' as Tab, label: '푸터 담당자', icon: UserCircle },
   ];
 
   return (
@@ -323,6 +366,76 @@ export default function SettingsPage() {
 
           <button
             onClick={saveLocation}
+            disabled={saving}
+            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
+          >
+            <Save size={18} />
+            {saving ? '저장 중...' : '저장'}
+          </button>
+        </div>
+      )}
+
+      {/* Footer Tab */}
+      {activeTab === 'footer' && (
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 space-y-6">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <UserCircle className="w-5 h-5 text-blue-600" />
+              <h2 className="text-lg font-semibold text-gray-900">푸터 담당자</h2>
+            </div>
+            <button
+              type="button"
+              onClick={addManager}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-sm bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors"
+            >
+              <Plus size={15} />
+              담당자 추가
+            </button>
+          </div>
+          <p className="text-sm text-gray-500">사이트 하단 푸터에 표시되는 홈페이지 담당자 목록입니다.</p>
+
+          <div className="space-y-3">
+            {managers.map((manager, index) => (
+              <div key={index} className="grid grid-cols-3 gap-2 items-center p-3 bg-gray-50 rounded-lg">
+                <input
+                  type="text"
+                  value={manager.role}
+                  onChange={(e) => updateManager(index, 'role', e.target.value)}
+                  placeholder="역할 (예: 홈페이지 책임자)"
+                  className="px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+                <input
+                  type="text"
+                  value={manager.name}
+                  onChange={(e) => updateManager(index, 'name', e.target.value)}
+                  placeholder="이름"
+                  className="px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+                <div className="flex gap-2">
+                  <input
+                    type="email"
+                    value={manager.email}
+                    onChange={(e) => updateManager(index, 'email', e.target.value)}
+                    placeholder="이메일"
+                    className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => removeManager(index)}
+                    className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                </div>
+              </div>
+            ))}
+            {managers.length === 0 && (
+              <p className="text-sm text-gray-400 text-center py-4">담당자가 없습니다. 추가 버튼을 눌러 추가하세요.</p>
+            )}
+          </div>
+
+          <button
+            onClick={saveFooter}
             disabled={saving}
             className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
           >
