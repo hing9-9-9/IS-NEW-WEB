@@ -7,7 +7,8 @@ const Notice = require('../models/Notice');
 const { requireAdmin } = require('../middleware/adminAuth');
 
 // Multer setup
-const uploadDir = path.join(__dirname, '../uploads/notices');
+const UPLOADS_ROOT = process.env.UPLOADS_ROOT || path.join(__dirname, '../uploads');
+const uploadDir = path.join(UPLOADS_ROOT, 'notices');
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 
 const storage = multer.diskStorage({
@@ -114,7 +115,7 @@ router.delete('/:id', requireAdmin, async (req, res) => {
 
     // Delete attachment files from disk
     for (const att of notice.attachments) {
-      const filePath = path.join(__dirname, '..', att.path);
+      const filePath = path.join(UPLOADS_ROOT, att.path.replace(/^\/uploads/, ''));
       if (fs.existsSync(filePath)) {
         try { fs.unlinkSync(filePath); } catch {}
       }
@@ -162,7 +163,7 @@ router.delete('/:id/attachments/:attachmentId', requireAdmin, async (req, res) =
     const attachment = notice.attachments.id(req.params.attachmentId);
     if (!attachment) return res.status(404).json({ error: 'Attachment not found' });
 
-    const filePath = path.join(__dirname, '..', attachment.path);
+    const filePath = path.join(UPLOADS_ROOT, attachment.path.replace(/^\/uploads/, ''));
     if (fs.existsSync(filePath)) {
       try { fs.unlinkSync(filePath); } catch {}
     }

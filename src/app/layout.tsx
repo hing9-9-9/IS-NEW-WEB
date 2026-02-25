@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "한양대학교 정보시스템학과",
@@ -31,7 +32,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <LayoutWrapper>{children}</LayoutWrapper>
+        <LayoutWrapper footer={<Footer />}>{children}</LayoutWrapper>
       </body>
     </html>
   );

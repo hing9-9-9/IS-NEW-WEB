@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Save, RefreshCw, Database, Server, Shield, FileText, MapPin, Info, UserCircle, Plus, Trash2 } from 'lucide-react';
+import { Save, FileText, MapPin, Info, UserCircle, Plus, Trash2 } from 'lucide-react';
 import { siteSettingsApi } from '@/lib/api';
 
-type Tab = 'system' | 'about' | 'location' | 'footer';
+type Tab = 'about' | 'location' | 'footer';
 
 interface FooterManager {
   role: string;
@@ -13,7 +13,7 @@ interface FooterManager {
 }
 
 export default function SettingsPage() {
-  const [activeTab, setActiveTab] = useState<Tab>('system');
+  const [activeTab, setActiveTab] = useState<Tab>('about');
   const [saving, setSaving] = useState(false);
   const [saveMessage, setSaveMessage] = useState('');
 
@@ -142,7 +142,6 @@ export default function SettingsPage() {
   };
 
   const tabs = [
-    { id: 'system' as Tab, label: '시스템', icon: Server },
     { id: 'about' as Tab, label: '학과소개', icon: FileText },
     { id: 'location' as Tab, label: '위치 정보', icon: MapPin },
     { id: 'footer' as Tab, label: '푸터 담당자', icon: UserCircle },
@@ -181,70 +180,6 @@ export default function SettingsPage() {
         <div className="bg-green-50 border border-green-200 rounded-lg p-3 text-green-700 text-sm">
           {saveMessage}
         </div>
-      )}
-
-      {/* System Tab */}
-      {activeTab === 'system' && (
-        <>
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">시스템 상태</h2>
-            <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <Server className="w-5 h-5 text-gray-500" />
-                  <div>
-                    <p className="font-medium text-gray-900">백엔드 서버</p>
-                    <p className="text-sm text-gray-500">Express.js on port 5001</p>
-                  </div>
-                </div>
-                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">실행 중</span>
-              </div>
-              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <Database className="w-5 h-5 text-gray-500" />
-                  <div>
-                    <p className="font-medium text-gray-900">MongoDB</p>
-                    <p className="text-sm text-gray-500">Database</p>
-                  </div>
-                </div>
-                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">연결됨</span>
-              </div>
-              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-gray-500" />
-                  <div>
-                    <p className="font-medium text-gray-900">인증</p>
-                    <p className="text-sm text-gray-500">현재 비활성화 상태</p>
-                  </div>
-                </div>
-                <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">개발 모드</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">관리자 정보</h2>
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">사이트 이름</label>
-                <input type="text" defaultValue="한양대학교 정보시스템학과" className="w-full px-4 py-2 border border-gray-300 rounded-lg" disabled />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">관리자 이메일</label>
-                <input type="email" defaultValue="admin@hanyang.ac.kr" className="w-full px-4 py-2 border border-gray-300 rounded-lg" disabled />
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-            <h3 className="font-medium text-blue-900 mb-2">사용 안내</h3>
-            <ul className="text-sm text-blue-800 space-y-1 list-disc list-inside">
-              <li>인증 기능은 현재 개발을 위해 비활성화되어 있습니다</li>
-              <li>프로덕션 배포 전에 인증 시스템을 활성화해야 합니다</li>
-              <li>데이터베이스 백업은 MongoDB에서 직접 수행하세요</li>
-            </ul>
-          </div>
-        </>
       )}
 
       {/* About Tab */}

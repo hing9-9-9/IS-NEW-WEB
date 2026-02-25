@@ -31,7 +31,8 @@ app.use(session({
 }));
 
 // Static files for uploads
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+const UPLOADS_ROOT = process.env.UPLOADS_ROOT || path.join(__dirname, 'uploads');
+app.use('/uploads', express.static(UPLOADS_ROOT));
 
 // MongoDB connection
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27108/is-web';

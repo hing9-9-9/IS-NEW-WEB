@@ -27,7 +27,8 @@ export default function NewNoticePage() {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) return;
-    setPendingFiles(prev => [...prev, ...Array.from(e.target.files!)]);
+    const newFiles = Array.from(e.target.files);
+    setPendingFiles(prev => [...prev, ...newFiles]);
     e.target.value = '';
   };
 
